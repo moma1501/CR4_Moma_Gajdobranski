@@ -1,4 +1,9 @@
 <?php
+
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
     require_once "components/db_connect.php";
   
 
@@ -10,15 +15,28 @@
 
     if(isset($_POST["submit"])){
        
-        $title = $_POST["title"];
-        $author_last_name = $_POST["author_last_name"];
-        $ISBN_code = $_POST["ISBN_code"];
-        $type = $_POST["type"];
-        $image = $_POST["image"];
+      $title = $_POST["title"];
+      $image = $_POST["image"];
+      $ISBN_code = $_POST["ISBN_code"];
+      $short_description = $_POST["short_description"];
+      $type = $_POST["type"];
+      $author_first_name = $_POST["author_first_name"];
+      $author_last_name = $_POST["author_last_name"];
+      $publisher_name = $_POST["publisher_name"];
+      $publisher_address = $_POST["publisher_address"];
+      $publish_date = $_POST["publish_date"];
 
 
     
-            $sql = "UPDATE `media` SET `title` = '$title', `author_last_name` = '$author_last_name', `ISBN_code`=$ISBN_code , `type` = '$type' , `image` = '$image' WHERE `id` = $_GET[id]";
+            $sql = "UPDATE `media` SET 
+            
+                `title` = '$title', `image` = '$image' ,`ISBN_code`= '$ISBN_code' , `short_description`= '$short_description' ,  `type` = '$type' ,
+                
+                `author_first_name` = '$author_first_name', `author_last_name` = '$author_last_name',
+                
+                `publisher_name` = '$publisher_name', `publisher_address` = '$publisher_address', `publish_date` = '$publish_date' 
+                
+                   WHERE `id` = $_GET[id]";
    
         if(mysqli_query($connect, $sql)){
             echo "<div class='alert alert-success' role='alert'>
@@ -47,7 +65,13 @@
 
 <form action="" method="post"> 
     <input type="text" name="title" placeholder="Enter title" class="form_control" value="<?=$row["title"]; ?>">
+    <input type="text" name="author_first_name" placeholder="Enter authors first name" class="form_control" value="<?=$row["author_first_name"]; ?>">
+    <input type="text" name="author_last_name" placeholder="Enter authors last name" class="form_control" value="<?=$row["author_last_name"]; ?>">
     <input type="number" name="ISBN_code" placeholder="Enter ISBN" class="form_control" value="<?=$row["ISBN_code"]; ?>">
+    <input type="text" name="short_description" placeholder="Media description" class="form_control" value="<?=$row["short_description"]; ?>">
+    <input type="text" name="publisher_name" placeholder="Enter publisher name" class="form_control" value="<?=$row["publisher_name"]; ?>">
+    <input type="text" name="publisher_address" placeholder="Enter publisher address" class="form_control" value="<?=$row["publisher_address"]; ?>">
+    <input type="date" name="publish_date" placeholder="Enter publish date" class="form_control" value="<?=$row["publish_date"]; ?>">
     <input type="text" name="image" placeholder="Enter image URL " class="form_control" value="<?=$row["image"]; ?>">
     <select name="type">
         <option value="dvd" <?php echo $row["type"] == "dvd" ? "selected" : "" ?>>DVD</option>
