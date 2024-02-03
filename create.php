@@ -47,6 +47,8 @@ mysqli_close($connect);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
@@ -62,7 +64,8 @@ mysqli_close($connect);
     <input type="text" name="short_description" placeholder=" Madia description" class="form_control">
     <input type="text" name="publisher_name" placeholder=" Publisher name" class="form_control">
     <input type="text" name="publisher_address" placeholder=" Publisher address" class="form_control">
-    <input type="date" name="publish_date" placeholder=" Publish date" class="form_control">
+    <input type="date" name="publish_date" class="form-control" placeholder="Enter publish date" value="<?=$row["publish_date"]; ?>">
+
     <input type="text" name="image" placeholder="Enter image URL" class="form_control">
 
         <select name="type">

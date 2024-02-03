@@ -1,0 +1,44 @@
+/* Apply styles to form */
+form {
+  max-width: 500px; /* Set maximum width for the form */
+  margin: 0 auto; /* Center the form horizontally */
+  padding: 20px; /* Add padding to the form */
+  border: 1px solid #ccc; /* Add a border to the form */
+  border-radius: 5px; /* Add border radius */
+  background-color: #f9f9f9; /* Light gray background color */
+}
+
+/* Apply styles to form inputs */
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form select {
+  width: 100%; /* Set the width of inputs and select to 100% */
+  padding: 10px; /* Add padding to inputs and select */
+  margin-bottom: 15px; /* Add margin bottom to create space between inputs */
+  border: 1px solid #ccc; /* Add border to inputs and select */
+  border-radius: 3px; /* Add border radius */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+/* Apply styles to form submit button */
+form input[type="submit"] {
+  width: 100%; /* Set the width of the submit button to 100% */
+  padding: 10px; /* Add padding to the submit button */
+  border: none; /* Remove border from the submit button */
+  border-radius: 3px; /* Add border radius */
+  background-color: #e26315; /* Green background color */
+  color: #fff; /* White text color */
+  cursor: pointer; /* Add pointer cursor on hover */
+}
+
+/* Apply styles to form submit button on hover */
+form input[type="submit"]:hover {
+  background-color: #cac53b; /* Darker green background color on hover */
+}
+
+.d-flex {
+  display: flex;
+  margin: 10px;
+  justify-content: end;
+}

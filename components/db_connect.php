@@ -1,9 +1,9 @@
 <?php 
 
-      $hostname = "localhost"; 
-      $username = "root"; 
-      $password = ""; 
-      $dbname = "BE20_CR4_MomaGajdobranski_BigLibrary";
+      $hostname = "5.189.178.173"; 
+      $username = "momacodefactory"; 
+      $password = "Z?un{N;32rvE"; 
+      $dbname = "momacodefactory_cr4";
 
     $connect = mysqli_connect($hostname, $username, $password, $dbname);
 
